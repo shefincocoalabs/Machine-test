@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Page Title - SB Admin</title>
+</head>
+
+<body class="bg-primary">
+  <div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
+      <main>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-7">
+              <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header">
+                  <h3 class="text-center font-weight-light my-4">Create Account</h3>
+                </div>
+                <div class="card-body">
+                  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                    <div class="form-row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="small mb-1" for="inputFirstName">Role</label>
+                          <select class="form-control" formControlName="role" placeholder="Role *"
+                            [ngClass]="{ 'is-invalid': submitted && f.role.errors }">
+                            <option value="">--Select role--</option>
+                            <option value="Buyer">Buyer</option>
+                            <option value="Seller">Seller</option>
+                          </select>
+                          <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
+                            <div *ngIf="f.role.errors.required">Role name is required*</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="small mb-1" for="inputFirstName">First Name</label>
+                          <input class="form-control py-4" formControlName="firstName" type="text"
+                            placeholder="Enter first name"
+                            [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                            <div *ngIf="f.firstName.errors.required">First name is required*</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="small mb-1" for="inputLastName">Last Name</label>
+                          <input class="form-control py-4" formControlName="lastName" type="text"
+                            placeholder="Enter last name"
+                            [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required">Last name is required*</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="small mb-1" for="inputEmailAddress">Email</label>
+                      <input class="form-control py-4" formControlName="email" id="inputEmailAddress" type="email"
+                        aria-describedby="emailHelp" placeholder="Enter email address"
+                        [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required*</div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="small mb-1" for="inputPassword">Password</label>
+                          <input class="form-control py-4" formControlName="password" id="inputPassword" type="password"
+                            placeholder="Enter password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Password is required*</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="small mb-1" for="inputConfirmPassword">Confirm Password</label>
+                          <input class="form-control py-4" formControlName="confirmPassword" id="inputConfirmPassword"
+                            type="password" placeholder="Confirm password"
+                            [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                          <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                            <div *ngIf="f.confirmPassword.errors.required">Confirm password is required*</div>
+                          </div>
+                          <div *ngIf="submitted && passwordMatch" class="invalid-feedback">
+                            <div *ngIf="passwordMatch">Password and Confirm password should be same*</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group mt-4 mb-0"><button type="submit" class="btn btn-primary btn-block">Create
+                        Account</button></div>
+                  </form>
+                </div>
+                <div class="card-footer text-center">
+                  <div class="small"><a [routerLink]="['']">Have an account? Go to login</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-beat"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
