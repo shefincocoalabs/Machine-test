@@ -29,6 +29,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## JSON Server
 
+run `npm install --save` command after downloading the code.
+
 To run the app, open the project in a terminal and start the JSON Server by running the command
 
 `json-server --watch db.json`
