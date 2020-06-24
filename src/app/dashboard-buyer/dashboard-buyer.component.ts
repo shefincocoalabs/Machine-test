@@ -13,7 +13,7 @@ export class DashboardBuyerComponent implements OnInit {
 
   ngOnInit(): void {
     this.userData = localStorage.getItem('user');
-    this.firstName = this.userData['firstName'];
+    this.firstName = this.userData.firstName;
     this.lastName = this.userData.lastName;
   }
 
