@@ -31,6 +31,10 @@ export class AccountsService {
   );
   }
 
+  public loggedIn(): boolean {
+    return (localStorage.getItem('user') !== null);
+  }
+
   handleError(error) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

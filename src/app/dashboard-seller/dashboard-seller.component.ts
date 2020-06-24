@@ -15,4 +15,9 @@ export class DashboardSellerComponent implements OnInit {
     this.role = this.route.snapshot.paramMap.get('role');
   }
 
+  logout() {
+    localStorage.removeItem('seller');
+    this.router.navigate(['']);
+}
+
 }
